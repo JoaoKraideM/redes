@@ -1,0 +1,40 @@
+14/04
+Sub-nets
+
+/8 - 255.0.0.0 (16 milhões ip)
+/16 - 255.255.0.0 (65.534 ips)
+/24 - 255.255.255.0 (254 ips)
+
+#Matriz(sp) 3500
++Filial (sp) 3000
++Filial2(sp) 3200
+
+-> a você foi fornecido um Classe B puro:
+172.16.0.0
+
+A subnet é /21 /22, a tomada de bits emprestados para fornecimento da rede
+A subnet é usar bits emprestados da classe B, para não haver disperdicio
+
+*Lapa - 3500
+*Osasco - 3000
+*Cambuci - 3200
+
+Do endereço ip 172.16.11111111.11111111, sabemos que o classe C puro tem 256 ips(2 elevado a oitava = 256), 256 ips não
+atende o necessario, então pedimos bits emprestados passando de um em um, (2 elevado a oitava = 256, passando a ser 2 elevado a 9 = 512,
+passando a ser 2 elevado a 10 = 1024, passando a ser 2 elevado a 11 = 2048, passando a ser 2 elevado a 12 = 4096.) Então pegando 4 bits emprestados
+da classe B teremos a solução da nossa situação.
+virando:
+16 intervalos que variam de 16 em 16 e cada intervalo comporta 4096 ips
+
+somamos fazendo para mascara da rede(Utilizamos os números não utilizados):
+128  64  32   16  8  4  2  1
+1    1    1   1   0  0  0  0 
+
+Ficando:
+255.255.240.0
+(nome da rua)              (Quantidade de casas na rua)
+Rede:		  	   brodcast:
+172.16.0.0 ->(4096 ips) -> 172.16.15.255/20 (Lapa)
+172.16.16.0 -> (4096 ips) -> 172.16.31.255/20 (Osasco)
+172.16.32.0 -> (4096 ips) -> 172.16.47.255/20 (Cambuci)
+
