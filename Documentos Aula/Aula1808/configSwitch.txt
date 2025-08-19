@@ -1,0 +1,28 @@
+ena
+conf t
+vlan 10
+name Servidores
+vlan 20 
+name Tecnologia
+vlan 30
+name Desenvolvimento
+int f0/1
+switchport mode trunk
+int f0/2
+switchport mode access
+switchport access vlan 10
+int f0/3
+switchport mode access
+switchport access vlan 10
+int f0/4
+switchport mode access
+switchport access vlan 20
+int f0/5
+switchport mode access
+switchport access vlan 20
+int f0/6
+switchport mode access
+switchport access vlan 30
+int f0/7
+switchport mode access
+switchport access vlan 30
